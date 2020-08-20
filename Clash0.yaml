@@ -1,0 +1,57 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: false
+  listen: 0.0.0.0:53
+
+  default-nameserver:
+    - 119.29.29.29
+    - 119.28.28.28
+    - 223.5.5.5
+    - 223.6.6.6
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.0.0.1
+    - 1.1.1.1
+
+  enhanced-mode: redir-host # or fake-ip
+  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+  
+  nameserver:
+    - 119.29.29.29
+    - 119.28.28.28
+    - 223.5.5.5
+    - 223.6.6.6
+
+  fallback:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      # - 240.0.0.0/4
+
+rules:
+
+  # Local Area Network
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.0.0.0/8,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR,17.0.0.0/8,DIRECT
+
+  # Tencent
+  - IP-CIDR,119.28.28.28/32,DIRECT
+  - IP-CIDR,182.254.116.0/24,DIRECT
+  # GeoIP China
+  - GEOIP,CN,DIRECT
+
+  - MATCH,Final
