@@ -14,10 +14,10 @@ dns:
     - 119.28.28.28
     - 223.5.5.5
     - 223.6.6.6
-    - 8.8.8.8
-    - 8.8.4.4
     - 1.0.0.1
     - 1.1.1.1
+    - 8.8.8.8
+    - 8.8.4.4
 
   enhanced-mode: redir-host # or fake-ip
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
