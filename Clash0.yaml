@@ -6,7 +6,7 @@ ipv6: false
 external-controller: 127.0.0.1:9090
 
 dns:
-  enable: true
+  enable: false
   listen: 0.0.0.0:53
 
   default-nameserver:
