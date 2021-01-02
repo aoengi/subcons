@@ -1,2 +1,5 @@
 USER-AGENT,Speedtest*
 DOMAIN-KEYWORD,speedtest
+DOMAIN-SUFFIX,speedtest.net,DIRECT
+DOMAIN-SUFFIX,netspeedtestmaster.com,DIRECT
+DOMAIN,speedtest.macpaw.com,DIRECT
