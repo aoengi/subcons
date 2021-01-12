@@ -1,4 +1,5 @@
 # Download
+DOMAIN-SUFFIX,smtp
 DOMAIN-KEYWORD,aria2
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,yunpan
